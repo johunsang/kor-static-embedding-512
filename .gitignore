@@ -1,0 +1,30 @@
+# venv / 환경
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# 모델 가중치 (HF에서 다운로드, repo에는 코드만)
+models/
+
+# 로그·임시
+*.log
+webapp.log
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 인증서 (자가서명, 절대 push 금지)
+*.pem
+*.key
+key.pem
+cert.pem
