@@ -1,8 +1,24 @@
 # 한국어 Static Embedding 학습·평가 프로젝트
 
-원본 모델(`kekeappa/kor-minish-bge-m3-ko`)이 한국어 STS에서 낮은 점수(Spearman 0.55)를 보여, **동일한 Static Embedding 아키텍처를 유지하면서 한국어 공개 데이터로 재학습**하여 0.77~0.82까지 끌어올린 프로젝트입니다.
+원본 모델(`kekeappa/kor-minish-bge-m3-ko`)이 한국어 STS에서 낮은 점수(Spearman 0.55)를 보여, **동일한 Static Embedding 아키텍처를 유지하면서 한국어 공개 데이터로 재학습**하여 0.73~0.83까지 끌어올린 프로젝트입니다.
 
-학습된 모델: **https://huggingface.co/kekeappa/kor-static-embedding-512**
+## 🎯 모델 패밀리 (Matryoshka — 4개 차원)
+
+하나의 학습으로 **4가지 크기**를 동시에 만들었습니다. 용도에 맞게 선택:
+
+| 차원 | 크기 | KorSTS-test S | KorSTS-valid S | KLUE-STS S | HuggingFace |
+|---:|---:|---:|---:|---:|---|
+| **64** | **9MB** | 0.7337 | 0.7885 | 0.6582 | [kor-static-embedding-64](https://huggingface.co/kekeappa/kor-static-embedding-64) |
+| **128** | 17MB | 0.7521 | 0.8082 | 0.6656 | [kor-static-embedding-128](https://huggingface.co/kekeappa/kor-static-embedding-128) |
+| **256** | 34MB | 0.7690 | 0.8234 | 0.6838 | [kor-static-embedding-256](https://huggingface.co/kekeappa/kor-static-embedding-256) |
+| **512** | 68MB | **0.7718** | **0.8330** | **0.7033** | [kor-static-embedding-512](https://huggingface.co/kekeappa/kor-static-embedding-512) |
+
+| 용도 | 권장 차원 |
+|---|---|
+| 🌐 브라우저 / 모바일 앱 / 엣지 | **64d** (9MB) |
+| ⚡ 가벼운 검색·분류 | 128d |
+| ⚖️ 가성비 | 256d |
+| 🎯 최고 정확도 | 512d |
 
 ## 핵심 결과 한 줄 요약
 
